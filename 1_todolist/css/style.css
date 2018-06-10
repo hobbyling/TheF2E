@@ -32,24 +32,30 @@ body {
     .header .add:hover {
       -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
       box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
-      -webkit-transition: -webkit-box-shadow 1s;
-      transition: -webkit-box-shadow 1s;
-      -o-transition: box-shadow 1s;
-      transition: box-shadow 1s;
-      transition: box-shadow 1s, -webkit-box-shadow 1s; }
+      -webkit-transition: -webkit-box-shadow .5s;
+      transition: -webkit-box-shadow .5s;
+      -o-transition: box-shadow .5s;
+      transition: box-shadow .5s;
+      transition: box-shadow .5s, -webkit-box-shadow .5s; }
 
 ul {
   font-size: 14px;
   list-style-type: none;
   padding-left: 0;
-  text-align: center;
-  background: #fff; }
+  text-align: center; }
   ul.col-2 {
     padding: 0; }
   ul .tab {
     height: 105px;
     padding: 25px;
-    border-bottom: 1px solid #f1f1f1; }
+    border-bottom: 1px solid #f1f1f1;
+    background: #fff; }
+    ul .tab.active, ul .tab:hover {
+      background: #F5817D;
+      color: #fff;
+      -webkit-transition: background .5s;
+      -o-transition: background .5s;
+      transition: background .5s; }
     ul .tab .icon {
       height: 28px;
       width: 28px;
@@ -58,30 +64,30 @@ ul {
       background: url("../img/list_black.svg");
       background-size: 28px 28px;
       margin-bottom: 8px; }
-    ul .tab:first-child.active .icon {
+    ul .tab:first-child.active .icon, ul .tab:first-child:hover .icon {
       background: url("../img/list_white.svg");
       background-size: 28px 28px; }
     ul .tab:nth-child(2) .icon {
       background: url("../img/checked_black.svg");
       background-size: 28px 28px;
       margin-bottom: 8px; }
-    ul .tab:nth-child(2).active .icon {
+    ul .tab:nth-child(2).active .icon, ul .tab:nth-child(2):hover .icon {
       background: url("../img/checked_white.svg");
       background-size: 28px 28px; }
     ul .tab:nth-child(3) .icon {
       background: url("../img/unchecked_black.svg");
       background-size: 28px 28px;
       margin-bottom: 8px; }
-    ul .tab:nth-child(3).active .icon {
+    ul .tab:nth-child(3).active .icon, ul .tab:nth-child(3):hover .icon {
       background: url("../img/unchecked_white.svg");
       background-size: 28px 28px; }
 
-.active {
-  background: #F5817D;
-  color: #fff; }
-
 .border-important {
-  border-left: #F5817D; }
+  border-left: 5px solid #F5817D; }
+
+.completed-line {
+  color: #898989;
+  text-decoration: line-through; }
 
 input[type=checkbox] {
   width: 19px;
@@ -93,16 +99,23 @@ input[type=checkbox] {
 .content {
   background: #F1F1F1;
   padding: 35px 35px !important; }
-  .content h2 {
-    font-size: 18px;
-    color: #898989;
-    margin-bottom: 17px; }
   .content .task-card {
     height: 75px;
-    width: 685px;
+    width: 95%;
     background: #fff;
-    padding: 18px; }
+    padding: 18px;
+    margin: 0;
+    margin-bottom: 20px; }
+    .content .task-card:hover {
+      -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
+      -webkit-transition: -webkit-box-shadow .5s;
+      transition: -webkit-box-shadow .5s;
+      -o-transition: box-shadow .5s;
+      transition: box-shadow .5s;
+      transition: box-shadow .5s, -webkit-box-shadow .5s; }
     .content .task-card .detail .card-title {
+      display: block;
       font-size: 20px;
       margin-bottom: 0; }
     .content .task-card .detail .icon {
@@ -114,6 +127,10 @@ input[type=checkbox] {
     .content .task-card .star, .content .task-card .edit {
       font-size: 19px;
       padding-top: 10px; }
+    .content .task-card .star.active, .content .task-card .star:hover {
+      color: #ffd230; }
+    .content .task-card .edit:hover {
+      color: #F5817D; }
 
 .modal-header.row {
   margin-left: 0;
@@ -127,6 +144,9 @@ input[type=checkbox] {
 
 .modal-header .edit {
   color: #F5817D; }
+
+.modal-header .star.active, .modal-header .star:hover {
+  color: #ffd230; }
 
 .modal-body .date input {
   display: inline-block;
@@ -145,4 +165,11 @@ input[type=checkbox] {
   -ms-flex-pack: justify !important;
   justify-content: space-between !important; }
   .modal-footer button {
-    width: 45%; }
+    width: 45%;
+    background: #898989;
+    color: #fff; }
+    .modal-footer button:hover {
+      background: #F5817D;
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s; }

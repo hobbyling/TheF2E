@@ -1,6 +1,7 @@
 $color_main: #F5817D;
 $color_background: #E1E4EC;
 $color_content_background: #F1F1F1;
+$color_star: #ffd230;
 
 $color_text_gray: #898989;
 
@@ -45,7 +46,7 @@ body{
 
         &:hover{
             box-shadow: 0 5px 10px rgba(0,0,0,.4);
-            transition:box-shadow 1s;
+            transition:box-shadow .5s;
         }
     }
 }
@@ -56,7 +57,7 @@ ul{
     list-style-type: none;
     padding-left: 0;
     text-align: center;
-    background: #fff;
+
     &.col-2{
         padding: 0;
     }
@@ -65,6 +66,13 @@ ul{
         height: 105px;
         padding: 25px;
         border-bottom: 1px solid #f1f1f1;
+        background: #fff;
+
+        &.active, &:hover{
+            background: $color_main;
+            color: #fff;
+            transition: background .5s;
+        }
 
         .icon{
             height: 28px;
@@ -78,7 +86,7 @@ ul{
             margin-bottom: 8px;
         }
 
-        &:first-child.active .icon{
+        &:first-child.active .icon, &:first-child:hover .icon{
             background: url("../img/list_white.svg");
             background-size: 28px 28px;
         }
@@ -89,7 +97,7 @@ ul{
             margin-bottom: 8px;
         }
 
-        &:nth-child(2).active .icon{
+        &:nth-child(2).active .icon, &:nth-child(2):hover .icon{
             background: url("../img/checked_white.svg");
             background-size: 28px 28px;
         }
@@ -100,22 +108,22 @@ ul{
             margin-bottom: 8px;
         }
 
-        &:nth-child(3).active .icon{
+        &:nth-child(3).active .icon, &:nth-child(3):hover .icon{
             background: url("../img/unchecked_white.svg");
             background-size: 28px 28px;
         }
     }
 }
 
-
-.active{
-    background: $color_main;
-    color: #fff;
-}
-
 .border-important{
-    border-left: $color_main;
+    border-left: 5px solid $color_main;
 }
+
+.completed-line{
+    color: #898989;
+    text-decoration: line-through;
+}
+
 
 input[type=checkbox]{
     width: 19px;
@@ -129,22 +137,22 @@ input[type=checkbox]{
     background: $color_content_background;
     padding: 35px 35px !important;
 
-    h2{
-        font-size: 18px;
-        color: $color_text_gray;
-        margin-bottom: 17px;
-    }
-
     .task-card{
         height: 75px;
-        width: 685px;
+        width: 95%;
         background: #fff;
         padding: 18px;
+        margin: 0;
+        margin-bottom: 20px;
 
-        
+        &:hover{
+            box-shadow: 0 5px 10px 0px rgba(0,0,0,.2);
+            transition:box-shadow .5s;
+        }
 
         .detail{
             .card-title{
+                display: block;
                 font-size: 20px;
                 margin-bottom: 0;
             }
@@ -163,6 +171,14 @@ input[type=checkbox]{
         .star, .edit{
             font-size: 19px;
             padding-top: 10px;
+        }
+
+        .star.active, .star:hover{
+            color: $color_star;
+        }
+
+        .edit:hover{
+            color: $color_main;
         }
     }
 }
@@ -184,6 +200,10 @@ input[type=checkbox]{
 
     .edit{
         color: $color_main;
+    }
+
+    .star.active, .star:hover{
+        color: $color_star;
     }
 }
 
@@ -215,6 +235,13 @@ input[type=checkbox]{
 
     button{
         width: 45%;
-    }
+        background: #898989;
+        color: #fff;
+
+        &:hover{
+            background: $color_main;
+            transition: .5s; 
+        }
+    }   
 }
 

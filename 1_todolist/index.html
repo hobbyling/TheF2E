@@ -25,7 +25,7 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container" id="app">
         <div class="header row">
             <div class="logo col-2">
                 <h1>TODO</br>LIST</h1>
@@ -43,20 +43,45 @@
         <div class="main row">
 
             <ul class="side col-2">
-                <li class="tab active">
+                <li class="tab" :class="{'active': visibility == 'all'}" @click="visibility = 'all'">
                     <div class="icon"></div>All task</li>
-                <li class="tab">
+                <li class="tab" :class="{'active': visibility == 'completed'}" @click="visibility = 'completed'">
                     <div class="icon"></div>Completed</li>
-                <li class="tab">
+                <li class="tab" :class="{'active': visibility == 'active'}" @click="visibility = 'active'">
                     <div class="icon"></div>In Progress</li>
             </ul>
 
 
             <div class="content col-10">
-                <h2>All Task</h2>
 
-                <div class="card-list">
-                    <div class="task-card row">
+                <div class="card-list" v-for="(item, key) in filteredTodos">
+                    <div class="task-card row border-important">
+                        <input type="checkbox" class="col-1" v-model="item.completed" :id="item.id">
+
+                        <div class="detail col-9">
+                            <label class="card-title" :for="item.id" :class="{'completed-line': item.completed}">
+                                {{ item.title }}
+                            </label>
+
+                            <div class="icon">
+                                <i class="fas fa-paperclip file"></i>
+                            </div>
+                            <div class="icon">
+                                <i class="far fa-comment comment"></i>
+                            </div>
+                            <div class="icon">
+                                <i class="far fa-calendar-alt date"></i>
+                            </div>
+                        </div>
+
+                        <label>
+                            <i class="fas fa-star col-1 star" :class="{'active': item.important == 'true'}" @click="addMark(key)"></i>
+                        </label>
+
+                        <i class="fas fa-pencil-alt col-1 edit"></i>
+                    </div>
+
+                    <!-- <div class="task-card row">
                         <input type="checkbox" class="col-1">
 
                         <div class="detail col-9">
@@ -73,11 +98,32 @@
                             </div>
                         </div>
 
-
                         <i class="fas fa-star col-1 star"></i>
 
                         <i class="fas fa-pencil-alt col-1 edit"></i>
                     </div>
+
+                    <div class="task-card row">
+                        <input type="checkbox" class="col-1" checked>
+
+                        <div class="detail col-9">
+                            <h3 class="card-title completed-line">Meeting</h3>
+
+                            <div class="icon">
+                                <i class="fas fa-paperclip file"></i>
+                            </div>
+                            <div class="icon">
+                                <i class="far fa-comment comment"></i>
+                            </div>
+                            <div class="icon">
+                                <i class="far fa-calendar-alt date"></i>
+                            </div>
+                        </div>
+
+                        <i class="fas fa-star col-1 star"></i>
+
+                        <i class="fas fa-pencil-alt col-1 edit"></i>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -89,7 +135,7 @@
                 <div class="modal-header row">
                     <input type="checkbox" class="col-1">
 
-                    <input type="text" class="form-control col-9">
+                    <input type="text" class="form-control col-9" v-model="newTodo">
 
                     <i class="fas fa-star star col-1"></i>
 
@@ -127,11 +173,16 @@
 
                 <div class="modal-footer">
                     <button type="button" class="btn" data-dismiss="modal">Cancel</button>
-                    <button type="button" class="btn">Save</button>
+                    <button type="button" class="btn" @click="addTodo()" @keyup.enter="addTodo">Save</button>
                 </div>
             </div>
         </div>
     </div>
+
+
+    <!-- vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/all.js"></script>
 </body>
 
 </html>
