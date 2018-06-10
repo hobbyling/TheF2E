@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="36px" height="36px" viewBox="0 0 36 36" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 50.2 (55047) - http://www.bohemiancoding.com/sketch -->
+    <title>icon/list_gray</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="icon/list_gray" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M34.1825423,31 L9.81806376,31 C8.81388654,31 8,30.1046667 8,29 C8,27.8953333 8.81388654,27 9.81806376,27 L34.1819362,27 C35.1861135,27 36,27.8953333 36,29 C36,30.1046667 35.1867195,31 34.1825423,31 Z" id="Shape" fill="#B0B0B0" fill-rule="nonzero"></path>
+        <path d="M34.1825419,21 L9.81806374,21 C8.81388653,21 8,20.1046667 8,19 C8,17.8953333 8.81388653,17 9.81806374,17 L34.1819359,17 C35.1861131,17 35.9999997,17.8953333 35.9999997,19 C36.0006057,20.1046667 35.1867191,21 34.1825419,21 Z" id="Shape" fill="#B0B0B0" fill-rule="nonzero"></path>
+        <path d="M34.1825423,9 L9.81806376,9 C8.81388654,9 8,8.10466667 8,7 C8,5.89533333 8.81388654,5 9.81806376,5 L34.1819362,5 C35.1861135,5 36,5.89533333 36,7 C36,8.10466667 35.1867195,9 34.1825423,9 Z" id="Shape" fill="#B0B0B0" fill-rule="nonzero"></path>
+        <circle id="Oval" fill="#B0B0B0" fill-rule="nonzero" cx="2.5" cy="6.5" r="2.5"></circle>
+        <circle id="Oval" fill="#B0B0B0" fill-rule="nonzero" cx="2.5" cy="18.5" r="2.5"></circle>
+        <circle id="Oval" fill="#B0B0B0" fill-rule="nonzero" cx="2.5" cy="29.5" r="2.5"></circle>
+    </g>
+</svg>

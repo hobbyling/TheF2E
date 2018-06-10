@@ -1,0 +1,220 @@
+$color_main: #F5817D;
+$color_background: #E1E4EC;
+$color_content_background: #F1F1F1;
+
+$color_text_gray: #898989;
+
+body{
+    background-color: $color_background !important;
+    font-family: monospace serif;
+}
+
+
+.header{
+    position: relative;
+    background: linear-gradient(0deg, #FF9A9E 0%, #FAD0C4 100%);
+    height: 105px;
+    color: #fff;
+
+    .logo{
+        padding: 5px 40px;
+    }
+
+    .remaining{
+        padding: 20px 0 0 40px;
+        span{
+            font-size: 50px;
+        }
+    }
+
+    .add{
+        position: absolute;
+        right: 90px;
+        top: 72px;
+        z-index: 99;
+        text-align: center;
+        background: $color_main;
+        height: 53px;
+        width: 53px;
+        border-radius: 50%;
+        padding: 7px;
+
+        i{
+            display: block;
+        }
+
+        &:hover{
+            box-shadow: 0 5px 10px rgba(0,0,0,.4);
+            transition:box-shadow 1s;
+        }
+    }
+}
+
+    
+ul{
+    font-size: 14px;
+    list-style-type: none;
+    padding-left: 0;
+    text-align: center;
+    background: #fff;
+    &.col-2{
+        padding: 0;
+    }
+
+    .tab{
+        height: 105px;
+        padding: 25px;
+        border-bottom: 1px solid #f1f1f1;
+
+        .icon{
+            height: 28px;
+            width: 28px;
+            margin: auto;
+        }
+
+        &:first-child .icon{
+            background: url("../img/list_black.svg");
+            background-size: 28px 28px;
+            margin-bottom: 8px;
+        }
+
+        &:first-child.active .icon{
+            background: url("../img/list_white.svg");
+            background-size: 28px 28px;
+        }
+
+        &:nth-child(2) .icon{
+            background: url("../img/checked_black.svg");
+            background-size: 28px 28px;
+            margin-bottom: 8px;
+        }
+
+        &:nth-child(2).active .icon{
+            background: url("../img/checked_white.svg");
+            background-size: 28px 28px;
+        }
+
+        &:nth-child(3) .icon{
+            background: url("../img/unchecked_black.svg");
+            background-size: 28px 28px;
+            margin-bottom: 8px;
+        }
+
+        &:nth-child(3).active .icon{
+            background: url("../img/unchecked_white.svg");
+            background-size: 28px 28px;
+        }
+    }
+}
+
+
+.active{
+    background: $color_main;
+    color: #fff;
+}
+
+.border-important{
+    border-left: $color_main;
+}
+
+input[type=checkbox]{
+    width: 19px;
+    height: 19px;
+    background: #fff;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.content{
+    background: $color_content_background;
+    padding: 35px 35px !important;
+
+    h2{
+        font-size: 18px;
+        color: $color_text_gray;
+        margin-bottom: 17px;
+    }
+
+    .task-card{
+        height: 75px;
+        width: 685px;
+        background: #fff;
+        padding: 18px;
+
+        
+
+        .detail{
+            .card-title{
+                font-size: 20px;
+                margin-bottom: 0;
+            }
+
+            .icon{
+                display: inline-block;
+                width: 40px;
+            }
+            
+            i{
+                font-size: 15px;
+                color: #B0B0B0;
+            }
+        }
+
+        .star, .edit{
+            font-size: 19px;
+            padding-top: 10px;
+        }
+    }
+}
+
+
+.modal-header{
+    &.row{
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    input[type=checkbox]{
+        margin-top: 8px;
+    }
+
+    i{
+        margin-top: 13px;
+    }
+
+    .edit{
+        color: $color_main;
+    }
+}
+
+.modal-body{
+    .date{
+        input{
+            display: inline-block;
+            margin-left: 18px;
+            width: 200px;
+        }
+    }
+
+    .file{
+        input{
+            margin-left: 18px;
+        }
+    }
+
+    .comment{
+        textarea{
+            margin-left: 18px;
+            width: 90%;
+        }
+    }
+}
+
+.modal-footer{
+    justify-content: space-between !important;
+
+    button{
+        width: 45%;
+    }
+}
+

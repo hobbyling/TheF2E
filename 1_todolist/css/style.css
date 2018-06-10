@@ -1,0 +1,148 @@
+body {
+  background-color: #E1E4EC !important;
+  font-family: monospace serif; }
+
+.header {
+  position: relative;
+  background: -webkit-gradient(linear, left bottom, left top, from(#FF9A9E), to(#FAD0C4));
+  background: -webkit-linear-gradient(bottom, #FF9A9E 0%, #FAD0C4 100%);
+  background: -o-linear-gradient(bottom, #FF9A9E 0%, #FAD0C4 100%);
+  background: linear-gradient(0deg, #FF9A9E 0%, #FAD0C4 100%);
+  height: 105px;
+  color: #fff; }
+  .header .logo {
+    padding: 5px 40px; }
+  .header .remaining {
+    padding: 20px 0 0 40px; }
+    .header .remaining span {
+      font-size: 50px; }
+  .header .add {
+    position: absolute;
+    right: 90px;
+    top: 72px;
+    z-index: 99;
+    text-align: center;
+    background: #F5817D;
+    height: 53px;
+    width: 53px;
+    border-radius: 50%;
+    padding: 7px; }
+    .header .add i {
+      display: block; }
+    .header .add:hover {
+      -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+      -webkit-transition: -webkit-box-shadow 1s;
+      transition: -webkit-box-shadow 1s;
+      -o-transition: box-shadow 1s;
+      transition: box-shadow 1s;
+      transition: box-shadow 1s, -webkit-box-shadow 1s; }
+
+ul {
+  font-size: 14px;
+  list-style-type: none;
+  padding-left: 0;
+  text-align: center;
+  background: #fff; }
+  ul.col-2 {
+    padding: 0; }
+  ul .tab {
+    height: 105px;
+    padding: 25px;
+    border-bottom: 1px solid #f1f1f1; }
+    ul .tab .icon {
+      height: 28px;
+      width: 28px;
+      margin: auto; }
+    ul .tab:first-child .icon {
+      background: url("../img/list_black.svg");
+      background-size: 28px 28px;
+      margin-bottom: 8px; }
+    ul .tab:first-child.active .icon {
+      background: url("../img/list_white.svg");
+      background-size: 28px 28px; }
+    ul .tab:nth-child(2) .icon {
+      background: url("../img/checked_black.svg");
+      background-size: 28px 28px;
+      margin-bottom: 8px; }
+    ul .tab:nth-child(2).active .icon {
+      background: url("../img/checked_white.svg");
+      background-size: 28px 28px; }
+    ul .tab:nth-child(3) .icon {
+      background: url("../img/unchecked_black.svg");
+      background-size: 28px 28px;
+      margin-bottom: 8px; }
+    ul .tab:nth-child(3).active .icon {
+      background: url("../img/unchecked_white.svg");
+      background-size: 28px 28px; }
+
+.active {
+  background: #F5817D;
+  color: #fff; }
+
+.border-important {
+  border-left: #F5817D; }
+
+input[type=checkbox] {
+  width: 19px;
+  height: 19px;
+  background: #fff;
+  display: inline-block;
+  margin-top: 5px; }
+
+.content {
+  background: #F1F1F1;
+  padding: 35px 35px !important; }
+  .content h2 {
+    font-size: 18px;
+    color: #898989;
+    margin-bottom: 17px; }
+  .content .task-card {
+    height: 75px;
+    width: 685px;
+    background: #fff;
+    padding: 18px; }
+    .content .task-card .detail .card-title {
+      font-size: 20px;
+      margin-bottom: 0; }
+    .content .task-card .detail .icon {
+      display: inline-block;
+      width: 40px; }
+    .content .task-card .detail i {
+      font-size: 15px;
+      color: #B0B0B0; }
+    .content .task-card .star, .content .task-card .edit {
+      font-size: 19px;
+      padding-top: 10px; }
+
+.modal-header.row {
+  margin-left: 0;
+  margin-right: 0; }
+
+.modal-header input[type=checkbox] {
+  margin-top: 8px; }
+
+.modal-header i {
+  margin-top: 13px; }
+
+.modal-header .edit {
+  color: #F5817D; }
+
+.modal-body .date input {
+  display: inline-block;
+  margin-left: 18px;
+  width: 200px; }
+
+.modal-body .file input {
+  margin-left: 18px; }
+
+.modal-body .comment textarea {
+  margin-left: 18px;
+  width: 90%; }
+
+.modal-footer {
+  -webkit-box-pack: justify !important;
+  -ms-flex-pack: justify !important;
+  justify-content: space-between !important; }
+  .modal-footer button {
+    width: 45%; }
