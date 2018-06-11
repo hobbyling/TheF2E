@@ -11,7 +11,10 @@ body {
   height: 105px;
   color: #fff; }
   .header .logo {
-    padding: 5px 40px; }
+    padding: 30px; }
+    .header .logo h1 {
+      font-size: 24px;
+      padding-left: 40px; }
   .header .remaining {
     padding: 20px 0 0 40px; }
     .header .remaining span {
@@ -53,9 +56,9 @@ ul {
     ul .tab.active, ul .tab:hover {
       background: #F5817D;
       color: #fff;
-      -webkit-transition: background .5s;
-      -o-transition: background .5s;
-      transition: background .5s; }
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s; }
     ul .tab .icon {
       height: 28px;
       width: 28px;
@@ -94,39 +97,40 @@ input[type=checkbox] {
   height: 19px;
   background: #fff;
   display: inline-block;
-  margin-top: 5px; }
+  margin-top: 5px;
+  text-align: center; }
 
 .content {
   background: #F1F1F1;
-  padding: 35px 35px !important; }
+  padding: 35px 35px !important;
+  min-height: 500px !important; }
   .content .task-card {
     height: 75px;
     width: 95%;
     background: #fff;
-    padding: 18px;
+    padding: 10px;
     margin: 0;
     margin-bottom: 20px; }
     .content .task-card:hover {
       -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
       box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.2);
-      -webkit-transition: -webkit-box-shadow .5s;
-      transition: -webkit-box-shadow .5s;
-      -o-transition: box-shadow .5s;
-      transition: box-shadow .5s;
-      transition: box-shadow .5s, -webkit-box-shadow .5s; }
+      -webkit-transition: .5s;
+      -o-transition: .5s;
+      transition: .5s; }
     .content .task-card .detail .card-title {
       display: block;
       font-size: 20px;
       margin-bottom: 0; }
     .content .task-card .detail .icon {
       display: inline-block;
-      width: 40px; }
+      min-width: 40px;
+      margin-right: 10px; }
     .content .task-card .detail i {
       font-size: 15px;
       color: #B0B0B0; }
     .content .task-card .star, .content .task-card .edit {
       font-size: 19px;
-      padding-top: 10px; }
+      padding-top: 18px; }
     .content .task-card .star.active, .content .task-card .star:hover {
       color: #ffd230; }
     .content .task-card .edit:hover {
@@ -166,10 +170,10 @@ input[type=checkbox] {
   justify-content: space-between !important; }
   .modal-footer button {
     width: 45%;
-    background: #898989;
-    color: #fff; }
+    background: #EEEEEE; }
     .modal-footer button:hover {
       background: #F5817D;
+      color: #fff;
       -webkit-transition: .5s;
       -o-transition: .5s;
       transition: .5s; }

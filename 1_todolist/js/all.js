@@ -1,31 +1,46 @@
-var app = new Vue ({
+var app = new Vue({
     el: '#app',
-    data:{
+    data: {
         newTodo: '',
         visibility: 'all',
         todos: [
             {
-                id: '123',
-                title: 'test',
+                id: '001',
+                title: 'lunch dating',
+                date: '2018-06-10',
+                comment: 'with Aaron',
+                file: '',
                 completed: false,
                 important: false
             },
             {
-                id: '234',
-                title: 'test1111',
-                completed: true,
+                id: '002',
+                title: 'bank',
+                date: '2018-06-12',
+                comment: '',
+                file: 'aaa.zip',
+                completed: false,
                 important: true
+            },
+            {
+                id: '003',
+                title: 'hair cut',
+                date: '',
+                comment: '',
+                file: '',
+                completed: true,
+                important: false
             }
         ],
     },
 
     methods: {
-        addTodo: function() {
+        addTodo: function () {
             var value = this.newTodo.trim();
             var timestamp = Math.floor(Date.now());
             console.log(value, timestamp);
 
-            if(!value){
+            if (!value) {
                 return;
             }
 
@@ -37,36 +52,48 @@ var app = new Vue ({
             })
         },
 
-        addMark: function(key) {
-            if(this.todos[key].important){
+        addMark: function (key) {
+            if (this.todos[key].important) {
                 this.todos[key].important = false;
-            }else{
+            } else {
                 this.todos[key].important = true;
             }
         }
     },
 
     computed: {
-        filteredTodos: function() {
-            if(this.visibility == 'all'){
+        filteredTodos: function () {
+            if (this.visibility == 'all') {
                 return this.todos;
-             } else if(this.visibility == 'active'){
-                 var newTodos = [];
-                 this.todos.forEach(function(item){
-                     if(!item.completed){
-                       newTodos.push(item);
-                     }
-                 })     
-                 return newTodos;
-             } else if(this.visibility == 'completed'){
-                 var newTodos = [];
-                 this.todos.forEach(function(item){
-                     if(item.completed){
-                       newTodos.push(item);
-                     }
-               })     
-               return newTodos;
-             }
+            } else if (this.visibility == 'active') {
+                let newTodos = [];
+                this.todos.forEach(function (item) {
+                    if (!item.completed) {
+                        newTodos.push(item);
+                    }
+                })
+                return newTodos;
+            } else if (this.visibility == 'completed') {
+                let newTodos = [];
+                this.todos.forEach(function (item) {
+                    if (item.completed) {
+                        newTodos.push(item);
+                    }
+                })
+                return newTodos;
+            }
+        },
+
+        completedTodosNum: function () {
+            let count = 0;
+            let num = this.todos.length;
+
+            for (let i = 0; i < num; i++) {
+                if (this.todos[i].completed === false) {
+                    count++;
+                }
+            }
+            return count;
         }
     }
 });

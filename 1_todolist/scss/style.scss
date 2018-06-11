@@ -18,7 +18,11 @@ body{
     color: #fff;
 
     .logo{
-        padding: 5px 40px;
+        padding: 30px;
+        h1{
+            font-size: 24px;
+            padding-left: 40px;
+        }
     }
 
     .remaining{
@@ -71,7 +75,7 @@ ul{
         &.active, &:hover{
             background: $color_main;
             color: #fff;
-            transition: background .5s;
+            transition: .5s;
         }
 
         .icon{
@@ -131,23 +135,25 @@ input[type=checkbox]{
     background: #fff;
     display: inline-block;
     margin-top: 5px;
+    text-align: center;
 }
 
 .content{
     background: $color_content_background;
     padding: 35px 35px !important;
+    min-height: 500px !important;
 
     .task-card{
         height: 75px;
         width: 95%;
         background: #fff;
-        padding: 18px;
+        padding: 10px;
         margin: 0;
         margin-bottom: 20px;
 
         &:hover{
             box-shadow: 0 5px 10px 0px rgba(0,0,0,.2);
-            transition:box-shadow .5s;
+            transition:.5s;
         }
 
         .detail{
@@ -159,7 +165,8 @@ input[type=checkbox]{
 
             .icon{
                 display: inline-block;
-                width: 40px;
+                min-width: 40px;
+                margin-right: 10px;
             }
             
             i{
@@ -170,7 +177,7 @@ input[type=checkbox]{
 
         .star, .edit{
             font-size: 19px;
-            padding-top: 10px;
+            padding-top: 18px;
         }
 
         .star.active, .star:hover{
@@ -235,11 +242,11 @@ input[type=checkbox]{
 
     button{
         width: 45%;
-        background: #898989;
-        color: #fff;
+        background: #EEEEEE;
 
         &:hover{
             background: $color_main;
+            color: #fff;
             transition: .5s; 
         }
     }   

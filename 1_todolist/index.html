@@ -32,7 +32,7 @@
             </div>
 
             <div class="remaining col-8">
-                <span>3</span> task left
+                <span>{{ completedTodosNum }}</span> task left
             </div>
 
             <div class="add" data-toggle="modal" data-target="#myModal">
@@ -55,75 +55,33 @@
             <div class="content col-10">
 
                 <div class="card-list" v-for="(item, key) in filteredTodos">
-                    <div class="task-card row border-important">
-                        <input type="checkbox" class="col-1" v-model="item.completed" :id="item.id">
-
+                    <div class="task-card row " :class="{'border-important': item.important}">
+                        <div class="col-1">
+                            <input type="checkbox" v-model="item.completed" :id="item.id">
+                        </div>
                         <div class="detail col-9">
                             <label class="card-title" :for="item.id" :class="{'completed-line': item.completed}">
                                 {{ item.title }}
                             </label>
 
                             <div class="icon">
-                                <i class="fas fa-paperclip file"></i>
+                                <i class="fas fa-paperclip file"> {{ item.file }}</i>
                             </div>
                             <div class="icon">
-                                <i class="far fa-comment comment"></i>
+                                <i class="far fa-calendar-alt date"> {{ item.date }}</i>
                             </div>
                             <div class="icon">
-                                <i class="far fa-calendar-alt date"></i>
+                                <i class="far fa-comment comment"> {{ item.comment }}</i>
                             </div>
+
                         </div>
 
                         <label>
-                            <i class="fas fa-star col-1 star" :class="{'active': item.important == 'true'}" @click="addMark(key)"></i>
+                            <i class="fas fa-star col-1 star" :class="{'active': item.important}" @click="item.important = !item.important"></i>
                         </label>
 
-                        <i class="fas fa-pencil-alt col-1 edit"></i>
+                        <i class="fas fa-pencil-alt col-1 edit" data-toggle="modal" data-target="#myModal"></i>
                     </div>
-
-                    <!-- <div class="task-card row">
-                        <input type="checkbox" class="col-1">
-
-                        <div class="detail col-9">
-                            <h3 class="card-title">Meeting</h3>
-
-                            <div class="icon">
-                                <i class="fas fa-paperclip file"></i>
-                            </div>
-                            <div class="icon">
-                                <i class="far fa-comment comment"></i>
-                            </div>
-                            <div class="icon">
-                                <i class="far fa-calendar-alt date"></i>
-                            </div>
-                        </div>
-
-                        <i class="fas fa-star col-1 star"></i>
-
-                        <i class="fas fa-pencil-alt col-1 edit"></i>
-                    </div>
-
-                    <div class="task-card row">
-                        <input type="checkbox" class="col-1" checked>
-
-                        <div class="detail col-9">
-                            <h3 class="card-title completed-line">Meeting</h3>
-
-                            <div class="icon">
-                                <i class="fas fa-paperclip file"></i>
-                            </div>
-                            <div class="icon">
-                                <i class="far fa-comment comment"></i>
-                            </div>
-                            <div class="icon">
-                                <i class="far fa-calendar-alt date"></i>
-                            </div>
-                        </div>
-
-                        <i class="fas fa-star col-1 star"></i>
-
-                        <i class="fas fa-pencil-alt col-1 edit"></i>
-                    </div> -->
                 </div>
             </div>
         </div>
@@ -135,7 +93,7 @@
                 <div class="modal-header row">
                     <input type="checkbox" class="col-1">
 
-                    <input type="text" class="form-control col-9" v-model="newTodo">
+                    <input type="text" class="form-control col-9" v-model="newTodo" placeholder="Add new task">
 
                     <i class="fas fa-star star col-1"></i>
 
