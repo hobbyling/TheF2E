@@ -1,0 +1,46 @@
+$color_background: #F2F2F2;
+
+
+h1{
+    font-size: 48px;
+}
+h5{
+    font-size: 18px;
+}
+
+*{
+    font-family: 微軟正黑體;
+}
+
+
+header{
+    background: url(../img/header_1024.png);
+    height: 270px;
+    padding-top: 75px;
+
+    h1{
+        text-align: center;
+        color: #fff;
+        padding-bottom: 25px;
+    }
+
+    .search{
+        #search-box{
+            padding-left: 40px;
+            background: #fff url(../img/icon/search_gray.svg) no-repeat 5px 5px; 
+        }
+        .search-btn{
+            background: #fff;
+            color: #B1B1B1;
+            padding: 0 22px;
+        }
+    }
+}
+
+.content{
+    background: $color_background;
+
+    .side{
+        background: #fff;
+    }
+}
