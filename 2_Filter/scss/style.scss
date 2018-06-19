@@ -1,4 +1,15 @@
 $color_background: #F2F2F2;
+$color_text_dark: #4a4a4a;
+$color_text_light: #B0A79F;
+
+$color_main: #89AEAD;
+$color_sub: #DA897A;
+$color_sub2: #C3DDD8;
+
+@mixin text-type($fontSize, $fontColor){
+    font-size: $fontSize;
+    color: $fontColor;
+}
 
 
 h1{
@@ -10,6 +21,7 @@ h5{
 
 *{
     font-family: 微軟正黑體;
+    position: relative;
 }
 
 
@@ -38,9 +50,123 @@ header{
 }
 
 .content{
-    background: $color_background;
+    background: $color_background;  
+    padding: 22px;
+}
 
-    .side{
-        background: #fff;
+.side{
+    background: #fff;
+    padding: 17px 22px;
+    color: $color_text_dark;
+
+    h5{
+        display: inline-block;
     }
+
+    .float-right{
+        float: right;
+    }
+
+    .checkbox-item{
+        font-size: 14px;
+    }
+
+    a{
+        font-size: 12px;
+        color: #b7b7b7;
+    }
+
+}
+
+.result{
+    .condition{
+        background: #fff;
+        padding: 17px;
+        margin-bottom: 30px;
+
+        h5{
+            display: inline-block;
+        }
+        .tag-group{
+            display: inline-block;
+            width: 75%;
+            padding: 0 10px;
+
+            .badge{
+                height: 20px !important;
+                vertical-align: middle;
+                background: $color_sub;
+                color: #fff;
+                padding: 5px 15px;
+            }
+        }
+
+        .clear-tags{
+            color: #4d4d4d;
+            font-size: 14px;
+            float: right;
+        }
+    }
+
+    .result-show{
+        h4{
+            margin-bottom: 35px;
+        }
+
+        .record{
+            color: $color_sub;
+        }
+
+        .card{
+            width: 45%;
+            display: inline-block;
+            margin-bottom: 40px;
+
+
+            &:nth-child(even){
+                float: right;
+            }
+
+            .card-body{
+                padding: 8px 12px;
+
+                .card-title{
+                    @include text-type(18px, $color_main);
+                    display: inline-block;
+                }
+
+                .dist{
+                    float: right;
+                    @include text-type(12px, $color_text_dark);
+                    vertical-align: bottom;
+                }
+
+                .card-text{
+                    .detail{
+                        i{
+                            @include text-type(10px, $color_sub);
+                            margin-right: 10px;
+                        }
+                        p{
+                            display: inline-block;
+                            @include text-type(12px, $color_text_light);
+                            margin-bottom: 0px;
+                        }
+                    }
+
+                    a{
+                        position: absolute;
+                        right: 0;
+                        bottom: 0;
+                        @include text-type(16px, #fff);
+                        background: $color_sub2;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.page-link{
+    color: $color_text_light;
 }
