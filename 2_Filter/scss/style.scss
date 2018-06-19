@@ -154,7 +154,7 @@ header{
                         }
                     }
 
-                    a{
+                    button{
                         position: absolute;
                         right: 0;
                         bottom: 0;
@@ -169,4 +169,35 @@ header{
 
 .page-link{
     color: $color_text_light;
+}
+
+.modal{
+    .modal-header{
+        background: url(../img/site.png) no-repeat;
+        background-size: cover;
+        height: 407px; 
+
+        .modal-title{
+            @include text-type(36px, #fff );
+        }
+
+        .close{
+            color: #fff;
+        }
+    }
+
+    .modal-body{
+        padding: 30px 25px;
+
+        .information{
+            display: inline-block;
+            width: 50%;
+        }
+
+        .googlemap{
+            display: inline-block;
+            width: 48%;
+            float: right;
+        }
+    }
 }

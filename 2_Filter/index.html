@@ -9,11 +9,12 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4"
         crossorigin="anonymous">
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">
 
     <!-- production version, optimized for size and speed -->
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
     <!-- <script src="js/all.js"></script> -->
 </head>
 
@@ -137,7 +138,7 @@
                                     <div class="detail">
                                         <i class="fas fa-ticket-alt"></i><p>免費參觀</p>                                       
                                     </div>
-                                    <a href="#" class="btn">更多資訊</a>
+                                    <button type="button" class="btn btn-primary"data-toggle="modal" data-target=".bd-example-modal-lg">更多資訊</button>
                                 </div>
                                 
                             </div>
@@ -161,7 +162,7 @@
                                     <div class="detail">
                                         <i class="fas fa-ticket-alt"></i><p>免費參觀</p>                                       
                                     </div>
-                                    <a href="#" class="btn">更多資訊</a>
+                                    <button class="btn" data-toggle="medal" data-target="#popup-card">更多資訊</button>
                                 </div>                            
                             </div>
                         </div>
@@ -184,9 +185,51 @@
                                     <div class="detail">
                                         <i class="fas fa-ticket-alt"></i><p>免費參觀</p>                                       
                                     </div>
-                                    <a href="#" class="btn">更多資訊</a>
+                                    <button class="btn" data-toggle="medal" data-target="#popup-card">更多資訊</button>
                                 </div>
                                 
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Modal -->
+                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">高雄願景館</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="introduce">
+                                        高雄願景館的前身是日治時期興建的高雄市舊火車站，外觀是”和洋混合式建築”氣勢雄偉，內部則為西式的玄關及大廳。2002年為了配合鐵路、捷運、高鐵的三鐵共構，這棟老火車站建築物遷移到附近的空地上，並由市府規劃，以"數位博物館"的型式，其中歷史迴廊對於鐵道文化及往日風貌有一系列回顧，讓遊客可以重溫老車站的過往風華，而3D虛擬互動區則讓參觀者以虛擬實境的方式飛越高雄的重要景點並同時見證高雄的發展歷史。願景館是認識高雄過去與未來的最佳場所，而願景橋、鐵路文化棧道、風的祝福廣場…等公共藝術區也是遊客們最愛駐足與拍照留念的美麗景點。
+                                    </p>
+
+                                    <hr>
+
+                                    <div class="information">
+                                        <div class="detail">
+                                            <i class="fas fa-map-marker-alt"></i><p>高雄市三民區建國二路318號</p>                                       
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-clock"></i><p>週二至週日10:00-18:00，每週一公休</p>                                       
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-phone"></i><p>886-7-2363357</p>                                       
+                                        </div>
+                                        <div class="detail">
+                                            <i class="fas fa-ticket-alt"></i><p>免費參觀</p>                                       
+                                        </div>
+                                    </div>
+                                    <div class="googlemap">
+                                        <img src="img/map.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -214,6 +257,11 @@
             </div>
         </div>
     </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
